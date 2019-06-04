@@ -466,7 +466,7 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -1205,10 +1205,12 @@
   },
   "libraries": {
     "Microsoft.AspNet.WebApi.Client/5.2.3": {
-      "sha512": "3kiI8peSXbXHDDrRuo+QaX0iCEVRe0nvn2dBDRw656uPX32UalbBlSIDUDlJxu05eau4tnuhsikiUuugvvoUoQ==",
+      "sha512": "ULpkotsRpexb6KPbqmQ+PBOE+Yjr0P1v2aAeBYdp2aVmf0+4T71Gz/jPmDQc9qlvPVRNKgVyaXw10Ii43EUdLQ==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.client/5.2.3",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net45/System.Net.Http.Formatting.dll",
         "lib/net45/System.Net.Http.Formatting.xml",
         "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
@@ -1218,10 +1220,12 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Core/5.2.3": {
-      "sha512": "o90QYlRV8VKR1S7+EcJw9w8WSyVFLl+IIzN8ILZ+n2t6rsc/KS8kBxRzA7wCFPRUHhebCfLqilBk39phvanx3g==",
+      "sha512": "o5eZyqvY+FbL2ahhUdvS2RfHhdJkHHkAgQUudu/KPyCQywMywN9RL8QvOEhzGsoTkUOJhodKEvJlPBvTY9VCqQ==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.core/5.2.3",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "Content/web.config.transform",
         "lib/net45/System.Web.Http.dll",
         "lib/net45/System.Web.Http.xml",
@@ -1272,10 +1276,11 @@
       ]
     },
     "Microsoft.Azure.EventHubs/2.1.0": {
-      "sha512": "7HqMbqBn35bW2vYmismLdKVbpnuIv7TngAToD0hH0UMHVt/6YZZ63Yu6TP03bpwSTbM0oSX4wtqolBWoz/noIQ==",
+      "sha512": "GlZ3xQn+mtfatd/juTh3/C5NvdP50P9geBk+3AcbNoGk1VhxL1CKSyK/Qozg6Lz2SbOhZrbIbVp8Ai5xfOjaCA==",
       "type": "package",
       "path": "microsoft.azure.eventhubs/2.1.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/net461/Microsoft.Azure.EventHubs.dll",
         "lib/net461/Microsoft.Azure.EventHubs.xml",
@@ -1286,10 +1291,12 @@
       ]
     },
     "Microsoft.Azure.KeyVault.Core/1.0.0": {
-      "sha512": "iaA0E8xoVlqroQ7Iurg/VyAjfPdhzn+xN7JkdncmNoox/ez49uPbxp2vMrvhopBaUMuoBu38+8e0RvrV+X+BxA==",
+      "sha512": "bp8w4eHDOCHknB/rJlU3JbG/xEoiqb1KelIa+6aEOXMwDrhCS8D1HKIGWqZdJymlLkt0E7XqBRd9Gl1OPz8rJw==",
       "type": "package",
       "path": "microsoft.azure.keyvault.core/1.0.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net40/Microsoft.Azure.KeyVault.Core.dll",
         "lib/net40/Microsoft.Azure.KeyVault.Core.xml",
         "lib/portable-net45+wp8+wpa81+win/Microsoft.Azure.KeyVault.Core.dll",
@@ -1315,10 +1322,12 @@
       ]
     },
     "Microsoft.Azure.WebJobs/2.2.0": {
-      "sha512": "01mNDeDK8YUcUgQGwHs7UOYkSVyHo7FjLBf/YtatC/+tyyj0AdSTDiZgjI+IvdKw4f+IR7Ux2Eo9aqRZkgZNNA==",
+      "sha512": "4BSAvfbNYTqGVbccY3Fq5JTZ23wR80sBBAIr4v2yK59ugoYh1z648qUfqPmKjh7d/Y8HTZYaNigs0jHPtyJnIQ==",
       "type": "package",
       "path": "microsoft.azure.webjobs/2.2.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net45/Microsoft.Azure.WebJobs.Host.dll",
         "lib/net45/Microsoft.Azure.WebJobs.Host.xml",
         "microsoft.azure.webjobs.2.2.0.nupkg.sha512",
@@ -1326,10 +1335,12 @@
       ]
     },
     "Microsoft.Azure.WebJobs.Core/2.2.0": {
-      "sha512": "coEnPH4ZPk8cG0M/UopGn66nLfamTn37XL9OVpBmlVpb5+BKCHk2OG9ncbu/0/Ix78hzed7XLL9ElGopNU7jaw==",
+      "sha512": "Thv/tsn/RzVqG7nvs5HFE1Jy3gxy2Wr6bFYLZMZQoIUzL2yJdaAMVprmIKslhJTuEzO1Gk8KOL99jGLmJ6Rl/g==",
       "type": "package",
       "path": "microsoft.azure.webjobs.core/2.2.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net45/Microsoft.Azure.WebJobs.dll",
         "lib/net45/Microsoft.Azure.WebJobs.xml",
         "microsoft.azure.webjobs.core.2.2.0.nupkg.sha512",
@@ -1337,10 +1348,12 @@
       ]
     },
     "Microsoft.Azure.WebJobs.Extensions/2.2.0": {
-      "sha512": "QT3XgJYfgTseO3skH1fnH2vt+P7XLjvFXIf1w433s8DKHOTfdE+0IVUNTVHobTzYGNBumC7YogN6XTN9QSNg+w==",
+      "sha512": "64gFi76XxCw+ZWi6MbNAHE9jVhQ8YeO113BKi+ou9n+lMlyM0oWPyy/QzFxE6guibytUbc3t77TrGtdnm5SJlw==",
       "type": "package",
       "path": "microsoft.azure.webjobs.extensions/2.2.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net45/Microsoft.Azure.WebJobs.Extensions.dll",
         "lib/net45/Microsoft.Azure.WebJobs.Extensions.xml",
         "microsoft.azure.webjobs.extensions.2.2.0.nupkg.sha512",
@@ -1359,10 +1372,12 @@
       ]
     },
     "Microsoft.Azure.WebJobs.Extensions.Http/1.1.0": {
-      "sha512": "7bn7defVSDW9PGwmyPxvBAZdb4v9seQIXeDdY0FaNEn27O1WfEIVh3E5wa+ZbPc3q0qp/GmO4JuSzj4lbpNZDA==",
+      "sha512": "cbHIluzohUjigQfX56jqjKODoZWM7a86+PZhAxIE0KXsONRmavcYZ5DXzukNlScEdgT1cmP4nITI5NHlUJHNaA==",
       "type": "package",
       "path": "microsoft.azure.webjobs.extensions.http/1.1.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net45/Microsoft.Azure.WebJobs.Extensions.Http.dll",
         "lib/net45/Microsoft.Azure.WebJobs.Extensions.Http.xml",
         "microsoft.azure.webjobs.extensions.http.1.1.0.nupkg.sha512",
@@ -1370,10 +1385,12 @@
       ]
     },
     "Microsoft.Data.Edm/5.6.4": {
-      "sha512": "I9ea/CEOufddjjyRYIowshdeFj5SIqfWZ5conK/UIaFx2/jJ+PDRhQ5jcJTqTg/ediCa1C22TeRl/MmL9zwBew==",
+      "sha512": "UeHzE6jegBlTCmowAciDmUnashpndVNuPaaiWwmItEqjbfViQMJAEjFUqiiuZUR7kNI6HyMWY+Ve0FDBwPg49Q==",
       "type": "package",
       "path": "microsoft.data.edm/5.6.4",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net40/Microsoft.Data.Edm.dll",
         "lib/net40/Microsoft.Data.Edm.xml",
         "lib/net40/de/Microsoft.Data.Edm.resources.dll",
@@ -1423,10 +1440,12 @@
       ]
     },
     "Microsoft.Data.OData/5.6.4": {
-      "sha512": "Te71LAvjYppmBCLWomHvhVzKes3q8L5tmmDMSyLP7YrJMYG5/Ded8uJgxWWkUX/Vh11ZDpN2WXRByOg+BAHCYw==",
+      "sha512": "+c1CADb5GpPn+Ic7FlB0JxoHITZbb04JLVdPuD/LXqnXmDEzWs6qJhzMC3vtBF6akmczX86UbDeyQ5lttOpncw==",
       "type": "package",
       "path": "microsoft.data.odata/5.6.4",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net40/Microsoft.Data.OData.dll",
         "lib/net40/Microsoft.Data.OData.xml",
         "lib/net40/de/Microsoft.Data.OData.resources.dll",
@@ -1476,10 +1495,12 @@
       ]
     },
     "Microsoft.Data.Services.Client/5.6.4": {
-      "sha512": "94XNZKwnpHuFAdR70kqNTMBv2ex9m+VVQX8dHknZgtlq+nTlZDgzFmahU0wsBaIqJWc3k8Z+FftQ2Voq9r0NWA==",
+      "sha512": "e8lrJOO4LsW0dGRX5jFr68qdnk4mmA1L2sBmiVKYSRz1eEDhm5atD/HXkc2OkN4F2BQTId7zhR1w5m5vTY0sLw==",
       "type": "package",
       "path": "microsoft.data.services.client/5.6.4",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net40/Microsoft.Data.Services.Client.dll",
         "lib/net40/Microsoft.Data.Services.Client.xml",
         "lib/net40/de/Microsoft.Data.Services.Client.resources.dll",
@@ -1518,10 +1539,12 @@
       ]
     },
     "Microsoft.Extensions.Logging.Abstractions/1.1.1": {
-      "sha512": "MMWQNrwQKrSigIaGpPWIK9ZZCNd9aaCHaLgwfPiJNdOfU3UE+RA093YZ7B879MdZ1qSFPcS1QLLNjD+dxXX7Aw==",
+      "sha512": "QxiLggz7xWZQV0QQXjuGdWTv/YpEGLWa04zNm+dgBSxpZGgAcQ5dFZOvSYAU2YbRpd5BJWX4T2WyVjcYrjXQdA==",
       "type": "package",
       "path": "microsoft.extensions.logging.abstractions/1.1.1",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/netstandard1.1/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/netstandard1.1/Microsoft.Extensions.Logging.Abstractions.xml",
         "microsoft.extensions.logging.abstractions.1.1.1.nupkg.sha512",
@@ -1529,10 +1552,11 @@
       ]
     },
     "Microsoft.IdentityModel.Clients.ActiveDirectory/3.19.6": {
-      "sha512": "UCyckAXgPl0CO+fWcW6QDH+lbTYOmC0jQj31m/sA4BfaYLTrr36sBkaGscEJnEUzPW/f9QOr4ZjGcv6dsRpeDw==",
+      "sha512": "D30r/6txpha0fqShI2TrdwFp8+jYVOwGB68PTs610J4hsW8k71qznJmawlqn1lBqw2xAoCH/AXrtrD6Y9mY1ew==",
       "type": "package",
       "path": "microsoft.identitymodel.clients.activedirectory/3.19.6",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid7/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll",
         "lib/MonoAndroid7/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml",
@@ -1603,10 +1627,13 @@
       ]
     },
     "Microsoft.NET.Sdk.Functions/1.0.13": {
-      "sha512": "mYYTfM9tzzmaAx/oxR3LjMYy6s4XLbMglCeZ7a63aXwfz0SsHvFwltQeERVpGkL8DLsZbAzQObTgNZLtVbdbrw==",
+      "sha512": "3weC5TnPhbI1dxWHz+YxpOgPhSnSnpfv5OOdL36xjRKPPRyHP0X1lDtSnwN50aoMcur1ldXyeRxC/I7Yw3mTIA==",
       "type": "package",
       "path": "microsoft.net.sdk.functions/1.0.13",
+      "hasTools": true,
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "Sdk/Sdk.props",
         "Sdk/Sdk.targets",
         "build/netstandard1.0/Microsoft.NET.Sdk.Functions.Build.props",
@@ -1644,10 +1671,12 @@
       ]
     },
     "Microsoft.Tpl.Dataflow/4.5.24": {
-      "sha512": "6BE4Vu74+dkv5AkJd+UxW1sFMepMZOVlUoMZDUKqhc4Bf7pe7yySzCj6QrowUZbCqcDPwOiQsAgz3nXiLQSyMw==",
+      "sha512": "sBynxArVroOGrXpVWt8LX549xqWxQmU9Fn/R1cPqcpeuf2PEj8uQBgzFGjfuBrWAfbLsLrH941AII+XV3zTUuQ==",
       "type": "package",
       "path": "microsoft.tpl.dataflow/4.5.24",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "License-Stable.rtf",
         "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Dataflow.dll",
         "lib/portable-net45+win8+wp8+wpa81/system.threading.tasks.dataflow.xml",
@@ -1694,10 +1723,12 @@
       ]
     },
     "ncrontab/3.3.0": {
-      "sha512": "oNHphZD7YiqHJoqX5Myw+lfDDTnnI2i+mCuil8MW2gyHaEejhLOdsS9pqVUGAEIJsu4+OL+m3UmkBcw2gkdtsg==",
+      "sha512": "Q0/hJ/U4ZdJsiIqzzO4TnLoc9M1eW3TS3vZ+hnXiv9/XFHXomsiSPuBJNnpMjwoUiSwM2P3o8ocjFK+dcuDG8g==",
       "type": "package",
       "path": "ncrontab/3.3.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "COPYING.txt",
         "lib/net35/NCrontab.dll",
         "lib/netstandard1.0/NCrontab.dll",
@@ -1717,11 +1748,15 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/10.0.1": {
-      "sha512": "ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
+    "Newtonsoft.Json/10.0.3": {
+      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
       "type": "package",
-      "path": "newtonsoft.json/10.0.1",
+      "path": "newtonsoft.json/10.0.3",
+      "hasTools": true,
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -1734,9 +1769,11 @@
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.xml",
-        "newtonsoft.json.10.0.1.nupkg.sha512",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
       ]
@@ -2029,10 +2066,11 @@
       ]
     },
     "System.Diagnostics.DiagnosticSource/4.5.0": {
-      "sha512": "UumL3CJklk5WyEt0eImPmjeuyY1JgJ7Thmg2hAeZGKCv+9iuuAsoc2wcXjypdo3J8VNEmVCH2Bgn/kIw8NI2bA==",
+      "sha512": "eIHRELiYDQvsMToML81QFkXEEYXUSUT2F28t1SGrevWqP+epFdw80SyAXIKTXOHrIEXReFOEnEr7XlGiC2GgOg==",
       "type": "package",
       "path": "system.diagnostics.diagnosticsource/4.5.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -3213,10 +3251,11 @@
       ]
     },
     "System.Reflection.TypeExtensions/4.5.0": {
-      "sha512": "jdK7She37kK5gtXbznOVwcfbtCb2vIs8UfMsYd2OFiGLmj+3oXrA3bgUQPzbe3boNJApkA7oLb42nCHQ0g813A==",
+      "sha512": "dYSKm+jBVh/I9RQP6AaBiyd92Y6Ml9vEEcTSougcAMSt9X9QQHTGJo0p/uH4uSgODZe+5cuOkgg8wg02NuM0VQ==",
       "type": "package",
       "path": "system.reflection.typeextensions/4.5.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -3948,10 +3987,12 @@
       ]
     },
     "System.Spatial/5.6.4": {
-      "sha512": "BoXUQ0mHyeAbkR3qlhwXqUFxzJ7rZuFOrvFM/jZRk+S6JLI2JxXRKby6bxuWbmwYv2o/eRPQPbAOvEk5hB2Gmg==",
+      "sha512": "M4e9eIiDHR+Is5jj/3wRv2HQw861LHmLApcXznvsVf7G3uBG/F1SBE8tmFOuRox8H86AVx+fiiD/027/DQx5BA==",
       "type": "package",
       "path": "system.spatial/5.6.4",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net40/System.Spatial.dll",
         "lib/net40/System.Spatial.xml",
         "lib/net40/de/System.Spatial.resources.dll",
@@ -4556,10 +4597,12 @@
       ]
     },
     "WindowsAzure.Storage/7.2.1": {
-      "sha512": "PWSqaIFaUvi2DgHeDotoRtv1new1m3jfwsb+T6nZfpVdYYIzyYUOFPBxJ0f8yHUq8C9Na8avNc08YsdgDIoTZg==",
+      "sha512": "iWLalZrfS2UFfESP//ZOjGqPmW0m/lsiVsyQm76GckRR489pA4U5D6DYrqn9SUXaRa/IwMxzsWhq5p2/2o+ETw==",
       "type": "package",
       "path": "windowsazure.storage/7.2.1",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net40/Microsoft.WindowsAzure.Storage.dll",
         "lib/net40/Microsoft.WindowsAzure.Storage.pdb",
         "lib/net40/Microsoft.WindowsAzure.Storage.xml",
@@ -4581,27 +4624,27 @@
       "Microsoft.Azure.EventHubs >= 2.1.0",
       "Microsoft.Azure.WebJobs.Extensions.DocumentDB >= 1.2.0",
       "Microsoft.NET.Sdk.Functions >= 1.0.13",
-      "Newtonsoft.Json >= 10.0.1"
+      "Newtonsoft.Json >= 10.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\t-sedavi\\.nuget\\packages\\": {},
+    "C:\\Users\\kapeltol\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\t-sedavi\\source\\repos\\CosmicExplorer\\ChangeFeedLabSolution\\ChangeFeedFunction.csproj",
+      "projectUniqueName": "C:\\Users\\kapeltol\\source\\repos\\katarinasvedman\\cosmosdbchangefeed\\ChangeFeedLabSolution\\ChangeFeedFunction.csproj",
       "projectName": "ChangeFeedFunction",
-      "projectPath": "C:\\Users\\t-sedavi\\source\\repos\\CosmicExplorer\\ChangeFeedLabSolution\\ChangeFeedFunction.csproj",
-      "packagesPath": "C:\\Users\\t-sedavi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\t-sedavi\\source\\repos\\CosmicExplorer\\ChangeFeedLabSolution\\obj\\",
+      "projectPath": "C:\\Users\\kapeltol\\source\\repos\\katarinasvedman\\cosmosdbchangefeed\\ChangeFeedLabSolution\\ChangeFeedFunction.csproj",
+      "packagesPath": "C:\\Users\\kapeltol\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kapeltol\\source\\repos\\katarinasvedman\\cosmosdbchangefeed\\ChangeFeedLabSolution\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\t-sedavi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kapeltol\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4639,7 +4682,7 @@
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[10.0.1, )"
+            "version": "[10.0.3, )"
           }
         }
       }
@@ -4650,7 +4693,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: Microsoft.NET.Sdk.Functions 1.0.13 requires Newtonsoft.Json (= 9.0.1) but version Newtonsoft.Json 10.0.1 was resolved.",
+      "message": "Detected package version outside of dependency constraint: Microsoft.NET.Sdk.Functions 1.0.13 requires Newtonsoft.Json (= 9.0.1) but version Newtonsoft.Json 10.0.3 was resolved.",
       "libraryId": "Newtonsoft.Json",
       "targetGraphs": [
         ".NETFramework,Version=v4.6.1"
