@@ -29,12 +29,11 @@ param(
  [string]
  $subscriptionId,
 
- [Parameter(Mandatory=$True)]
  [string]
- $resourceGroupName,
+ $resourceGroupName = "recommendationGrp",
 
  [string]
- $resourceGroupLocation = "West US",
+ $resourceGroupLocation = "West Europe",
 
  [Parameter(Mandatory=$True)]
  [string]

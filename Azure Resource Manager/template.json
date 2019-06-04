@@ -48,7 +48,7 @@
       "kind": "GlobalDocumentDB",
       "name": "[parameters('cosmosdbaccount_name')]",
       "apiVersion": "2015-04-08",
-      "location": "West US",
+      "location": "West Europe",
       "tags": {
         "defaultExperience": "DocumentDB"
       },
@@ -64,6 +64,59 @@
       },
       "dependsOn": []
     },
+	{
+      "type": "Microsoft.DocumentDB/databaseAccounts/apis/databases", 
+      "name": "[concat(parameters('cosmosdbaccount_name'), '/sql/changefeedlabdatabase')]", 
+      "apiVersion": "2016-03-31",
+      "dependsOn": [
+        "[resourceId('Microsoft.DocumentDB/databaseAccounts/', parameters('cosmosdbaccount_name'))]"
+      ], 
+      "properties": { 
+        "resource": { 
+          "id": "changefeedlabdatabase"
+        },
+        "options": {         
+        } 
+      }
+    },
+    { 
+      "type": "Microsoft.DocumentDb/databaseAccounts/apis/databases/containers",
+      "name": "[concat(parameters('cosmosdbaccount_name'), '/sql/changefeedlabdatabase/changefeedlabcollection')]", 
+      "apiVersion": "2016-03-31", 
+      "dependsOn": [
+        "[resourceId('Microsoft.DocumentDB/databaseAccounts/apis/databases', parameters('cosmosdbaccount_name'), 'sql', 'changefeedlabdatabase')]"
+      ], 
+      "properties": { 
+        "resource": {
+          "id": "changefeedlabcollection", 
+          "partitionKey": {
+            "paths": [
+               "/Item"
+            ],
+             "kind": "Hash"
+          },
+          "indexingPolicy": {
+            "indexingMode": "consistent", 
+            "includedPaths": [
+              { 
+                "path": "/*", 
+                "indexes": [
+                  { "kind": "Range", 
+                    "dataType": "number", 
+                    "precision": -1
+                  },
+                  { 
+                    "kind": "Hash", 
+                    "dataType": "string", 
+                    "precision": -1
+                  }
+                ]
+              }
+            ]
+          }
+        } 
+      }
+     },
     {
       "type": "Microsoft.EventHub/namespaces",
       "sku": {
@@ -73,7 +126,7 @@
       },
       "name": "[parameters('eventhubnamespace_name')]",
       "apiVersion": "2017-04-01",
-      "location": "West US",
+      "location": "West Europe",
       "tags": {},
       "scale": null,
       "properties": {
@@ -91,7 +144,7 @@
       "kind": "Storage",
       "name": "[parameters('storageaccount_name')]",
       "apiVersion": "2018-02-01",
-      "location": "West US",
+      "location": "West europe",
       "tags": {},
       "scale": null,
       "properties": {
@@ -120,7 +173,7 @@
             "type": "Microsoft.StreamAnalytics/streamingjobs",
             "name": "[parameters('streamjob_name')]",
             "apiVersion": "2016-03-01",
-            "location": "West US",
+            "location": "West europe",
             "scale": null,
             "properties": {
                 "sku": {
@@ -146,7 +199,7 @@
             "type": "Microsoft.EventHub/namespaces/AuthorizationRules",
             "name": "[concat(parameters('eventhubnamespace_name'), '/', parameters('AuthorizationRules_RootManageSharedAccessKey_name'))]",
             "apiVersion": "2017-04-01",
-            "location": "West US",
+            "location": "West europe",
             "scale": null,
             "properties": {
                 "rights": [
@@ -163,7 +216,7 @@
         "type": "Microsoft.EventHub/namespaces/eventhubs",
         "name": "[concat(parameters('eventhubnamespace_name'), '/', parameters('eventhub_name'))]",
         "apiVersion": "2017-04-01",
-        "location": "West US",
+        "location": "West europe",
         "scale": null,
         "properties": {
           "messageRetentionInDays": 1,
@@ -178,7 +231,7 @@
             "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
             "name": "[concat(parameters('eventhubnamespace_name'), '/', parameters('eventhub_name'), '/', parameters('consumergroups_$Default_name'))]",
             "apiVersion": "2017-04-01",
-            "location": "West US",
+            "location": "West europe",
             "scale": null,
             "properties": {},
             "dependsOn": [

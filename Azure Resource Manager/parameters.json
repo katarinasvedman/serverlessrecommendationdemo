@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "cosmosdbaccount_name": {
-            "value": "Fill in a unique Cosmos DB account name here" //This needs to be a globally unique value, so try including your name and various numbers to get an acceptable name on the first try.
-        },
+            "value": "cosmosdbkapeltol190524" //This needs to be a globally unique value, so try including your name and various numbers to get an acceptable name on the first try.
+        },		
         "eventhubnamespace_name": {
-            "value": "Fill in a unique event hub namespace name here" //This needs to be a globally unique value, so try including your name and various numbers to get an acceptable name on the first try.
+            "value": "eventhubkapeltol190524" //This needs to be a globally unique value, so try including your name and various numbers to get an acceptable name on the first try.
         },
         "database_name": {
             "value": "changefeedlabdatabase"
         },
         "storageaccount_name": {
-            "value": "Fill in a unique storage account name here" //This needs to be a globally unique value, so try including your name and various numbers to get an acceptable name on the first try.
+            "value": "storagekapeltol190524" //This needs to be a globally unique value, so try including your name and various numbers to get an acceptable name on the first try.
         },
       "eventhub_name": {
         "value": "event-hub1"
