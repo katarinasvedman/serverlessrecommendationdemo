@@ -28,6 +28,11 @@
       },
       "streamingUnits": {
         "value":  1
-      }
+      },
+	 "appName": {
+
+      "value": "funcappkapeltol"
+
+    }
     }
 }
