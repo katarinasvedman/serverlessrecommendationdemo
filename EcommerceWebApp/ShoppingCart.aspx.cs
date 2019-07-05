@@ -9,11 +9,15 @@ using EcommerceWebApp.Logic;
 using System.Collections.Specialized;
 using System.Collections;
 using System.Web.ModelBinding;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace EcommerceWebApp
 {
     public partial class ShoppingCart : System.Web.UI.Page
     {
+        public static HttpClient client = new HttpClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
@@ -40,6 +44,32 @@ namespace EcommerceWebApp
         {
             ShoppingCartActions actions = new ShoppingCartActions();
             return actions.GetCartItems();
+        }
+        public List<EntityCartItem> GetEntityCartItems()
+        {
+            /*ShoppingCartActions actions = new ShoppingCartActions();
+            List<EntityCartItem> items = await actions.GetEntityCartItems();
+            return items;*/
+            ShoppingCartActions actions = new ShoppingCartActions();
+            String cartId = actions.GetCartId();
+
+            //string id = "8836900a-dff5-46db-8353-df2fe96470d4";//GetCartId();
+
+            //Call Cart Durable Entity Function API
+            List<EntityCartItem> items = new List<EntityCartItem>();
+            var response = client.GetAsync("http://localhost:7071/api/CartView?CartId=" + cartId).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var str = response.Content.ReadAsStringAsync();
+                EntityCart cart = JsonConvert.DeserializeObject<EntityCart>(str.Result);
+                foreach (var item in cart.Items)
+                {
+                    items.Add(new EntityCartItem { Id = item.Id, Price = item.Price });
+                }
+            }
+
+            return items;
         }
 
         public List<CartItem> UpdateCartItems()
