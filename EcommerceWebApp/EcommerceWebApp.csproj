@@ -57,6 +57,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -273,6 +274,7 @@
     <Compile Include="Logic\ExceptionUtility.cs" />
     <Compile Include="Logic\RoleActions.cs" />
     <Compile Include="Logic\ShoppingCartActions.cs" />
+    <Compile Include="Models\EntityCart.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\HotProducts.cs" />

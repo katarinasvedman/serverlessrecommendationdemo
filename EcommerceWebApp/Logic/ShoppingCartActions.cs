@@ -7,6 +7,8 @@ using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents;
 using System.Configuration;
 using Newtonsoft.Json;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace EcommerceWebApp.Logic
 {
@@ -152,6 +154,30 @@ namespace EcommerceWebApp.Logic
 
             return _db.ShoppingCartItems.Where(
                 c => c.CartId == ShoppingCartId).ToList();
+        }
+
+        public static async Task<List<EntityCartItem>> GetEntityCartItems()
+        {
+            string id = "8836900a-dff5-46db-8353-df2fe96470d4";//GetCartId();
+
+            //Call Cart Durable Entity Function API
+            HttpClient client = new HttpClient();
+            List<EntityCartItem> items = new List<EntityCartItem>();
+            client.BaseAddress = new Uri("http://localhost:7071/api/CartView");
+            HttpResponseMessage response = await client.GetAsync("http://localhost:7071/api/CartView?CartId:" + id);
+            if (response.IsSuccessStatusCode)
+            {
+                var str = await response.Content.ReadAsStringAsync();
+                EntityCart cart = JsonConvert.DeserializeObject<EntityCart>(str);
+                foreach (var item in cart.Items)
+                {
+                    items.Add(new EntityCartItem { Id = item.Id, Price = item.Price });
+                }
+            }
+
+            return items;
+            /*return _db.ShoppingCartItems.Where(
+                c => c.CartId == ShoppingCartId).ToList();*/
         }
 
         public decimal GetTotal()

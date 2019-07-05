@@ -25,6 +25,14 @@
         </asp:TemplateField>    
         </Columns>    
     </asp:GridView>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
+        ItemType="EcommerceWebApp.Models.EntityCartItem" SelectMethod="GetEntityCartItems" 
+        CssClass="table table-striped table-bordered" >   
+        <Columns>
+        <asp:BoundField DataField="Id" HeaderText="Name" />        
+        <asp:BoundField DataField="Price" HeaderText="Price (each)" DataFormatString="{0:c}"/> 
+        </Columns>    
+    </asp:GridView>
     <div>
         <p></p>
         <strong>
