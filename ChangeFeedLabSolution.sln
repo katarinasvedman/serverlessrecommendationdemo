@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangeFeedFunction", "Chang
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGenerator", "DataGenerator\DataGenerator.csproj", "{E0F57034-CDF9-4EFA-BB4C-25C21F914459}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personalization", "CosmosApp\Personalization.csproj", "{84855BB3-FA71-4E4D-9AC3-9A9B165E1155}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Personalization", "CosmosApp\Personalization.csproj", "{84855BB3-FA71-4E4D-9AC3-9A9B165E1155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartView", "MaterializedCart\CartView.csproj", "{03CB52DF-6B50-4D7E-BE27-FB760CE9C847}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartView", "MaterializedCart\CartView.csproj", "{03CB52DF-6B50-4D7E-BE27-FB760CE9C847}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mockups", "InventoryMockup\Mockups.csproj", "{D9172F17-40C7-4BB3-B9DF-EFD9939DEDDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mockups", "InventoryMockup\Mockups.csproj", "{D9172F17-40C7-4BB3-B9DF-EFD9939DEDDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DurableOrchestrationFunction", "DurableOrchestrationFunction\DurableOrchestrationFunction.csproj", "{FEB79576-8CCB-4448-B5CB-0AEC6E864F25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DurableOrchestrationFunction", "DurableOrchestrationFunction\DurableOrchestrationFunction.csproj", "{FEB79576-8CCB-4448-B5CB-0AEC6E864F25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeFeedPowerBIFunction", "ChangeFeedPowerBIFunction\ChangeFeedPowerBIFunction.csproj", "{55ACC14A-5505-4C44-AEC2-AD21484F230A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{FEB79576-8CCB-4448-B5CB-0AEC6E864F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEB79576-8CCB-4448-B5CB-0AEC6E864F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEB79576-8CCB-4448-B5CB-0AEC6E864F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55ACC14A-5505-4C44-AEC2-AD21484F230A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55ACC14A-5505-4C44-AEC2-AD21484F230A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55ACC14A-5505-4C44-AEC2-AD21484F230A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55ACC14A-5505-4C44-AEC2-AD21484F230A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

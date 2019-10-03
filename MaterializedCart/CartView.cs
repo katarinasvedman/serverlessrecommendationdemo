@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +24,7 @@ namespace CartView
             dynamic data = JsonConvert.DeserializeObject(requestBody);
             cartid = cartid ?? data?.CartId;
             if(cartid == null)
-                return new BadRequestObjectResult("Please pass a cartid on the query string or in the request body (CartId:xxx)");
+                return new BadRequestObjectResult("Please pass a cartid in the query string or in the request body (CartId:xxx)");
 
             //Read state of Cart Entity. State will give a Cart with a list of Items and a total amount
             EntityStateResponse<Cart> entityresult = await entityClient.ReadEntityStateAsync<Cart>(new EntityId("Cart", cartid));

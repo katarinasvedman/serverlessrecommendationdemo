@@ -29,9 +29,11 @@ param(
  [string]
  $subscriptionId,
 
+[Parameter(Mandatory=$False)]
  [string]
- $resourceGroupName = "recommendationGrp",
+ $resourceGroupName = "powerbiretailgrp",
 
+[Parameter(Mandatory=$False)]
  [string]
  $resourceGroupLocation = "West Europe",
 

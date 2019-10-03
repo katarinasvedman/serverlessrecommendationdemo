@@ -34,7 +34,7 @@ namespace EcommerceWebApp
                     LabelTotalText.Text = "";
                     lblTotal.Text = "";
                     ShoppingCartTitle.InnerText = "Shopping Cart is Empty";
-                    UpdateBtn.Visible = false;
+                    //UpdateBtn.Visible = false;
                     CheckoutImageBtn.Visible = false;
                 }
             }
@@ -47,13 +47,8 @@ namespace EcommerceWebApp
         }
         public List<EntityCartItem> GetEntityCartItems()
         {
-            /*ShoppingCartActions actions = new ShoppingCartActions();
-            List<EntityCartItem> items = await actions.GetEntityCartItems();
-            return items;*/
             ShoppingCartActions actions = new ShoppingCartActions();
             String cartId = actions.GetCartId();
-
-            //string id = "8836900a-dff5-46db-8353-df2fe96470d4";//GetCartId();
 
             //Call Cart Durable Entity Function API
             List<EntityCartItem> items = new List<EntityCartItem>();
@@ -78,23 +73,23 @@ namespace EcommerceWebApp
             {
                 String cartId = usersShoppingCart.GetCartId();
 
-                ShoppingCartActions.ShoppingCartUpdates[] cartUpdates = new ShoppingCartActions.ShoppingCartUpdates[CartList.Rows.Count];
-                for (int i = 0; i < CartList.Rows.Count; i++)
+                ShoppingCartActions.ShoppingCartUpdates[] cartUpdates = new ShoppingCartActions.ShoppingCartUpdates[Cartview.Rows.Count];
+                for (int i = 0; i < Cartview.Rows.Count; i++)
                 {
                     IOrderedDictionary rowValues = new OrderedDictionary();
-                    rowValues = GetValues(CartList.Rows[i]);
+                    rowValues = GetValues(Cartview.Rows[i]);
                     cartUpdates[i].ProductId = Convert.ToInt32(rowValues["ProductID"]);
 
                     CheckBox cbRemove = new CheckBox();
-                    cbRemove = (CheckBox)CartList.Rows[i].FindControl("Remove");
+                    cbRemove = (CheckBox)Cartview.Rows[i].FindControl("Remove");
                     cartUpdates[i].RemoveItem = cbRemove.Checked;
 
                     TextBox quantityTextBox = new TextBox();
-                    quantityTextBox = (TextBox)CartList.Rows[i].FindControl("PurchaseQuantity");
+                    quantityTextBox = (TextBox)Cartview.Rows[i].FindControl("PurchaseQuantity");
                     cartUpdates[i].PurchaseQuantity = Convert.ToInt16(quantityTextBox.Text.ToString());
                 }
                 usersShoppingCart.UpdateShoppingCartDatabase(cartId, cartUpdates);
-                CartList.DataBind();
+                Cartview.DataBind();
                 lblTotal.Text = String.Format("{0:c}", usersShoppingCart.GetTotal());
                 return usersShoppingCart.GetCartItems();
             }
