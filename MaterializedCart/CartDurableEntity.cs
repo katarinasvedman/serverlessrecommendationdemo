@@ -16,25 +16,35 @@ namespace MaterializedCart
             [EntityTrigger(EntityName = "Cart")] IDurableEntityContext ctx,
             ILogger log)
         {
+            var userAction = ctx.OperationName;
+            //Do not care about Viewed event
+            if (userAction == "viewed")
+            {
+                return;
+            }
             //Checked out - Cart is no longer needed 
-            if(ctx.OperationName == "purchased")
+            if (userAction == "purchased")
             {
                 log.LogInformation($"Cart is destructed: {ctx.Self}");
                 ctx.DestructOnExit();
                 return;
             }
 
-            //If Cart soesn't exist it will initialize with an empty item list
-            Cart cart = ctx.GetState<Cart>( () =>  new Cart { CartId = ctx.Key, Items = new List<Item>() });
+            //If Cart doesn't exist it will initialize with an empty item list
+            var cart = ctx.GetState<Cart>( () =>  new Cart( ctx.Key ));
 
             //Read item from "request" input
-            Item item = ctx.GetInput<Item>();
+            var item = ctx.GetInput<Item>();
             if (item == null)
                 ctx.Return(new Exception($"No Item found in request to Cart {ctx.Self}"));
 
-            log.LogInformation($"Processing action: {ctx.OperationName}, item: {item.Id} in Cart: {ctx.Self} ");
+            //Duplicate detection. Don't add duplicates.
+            if(CheckForDuplicate(cart, item.ETag))
+                return;
 
-            switch (ctx.OperationName)
+            log.LogInformation($"Processing action: {userAction}, item: {item.Id} in Cart: {ctx.Self} ");
+
+            switch (userAction)
             {                
                 case "add":                    
                     cart.Items.Add(item);
@@ -48,5 +58,9 @@ namespace MaterializedCart
             ctx.SetState(cart);            
         }
 
+        private static bool CheckForDuplicate(Cart cart, string eTag)
+        {
+            return cart.Items.Find(x => x.ETag == eTag) != null;
+        }
     }
 }

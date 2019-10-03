@@ -14,9 +14,10 @@ namespace DurableOrchestrationFunction
         [FunctionName("DurableCheckoutFunction")]
         public static async Task Run([CosmosDBTrigger(
             databaseName: "changefeedlabdatabase",
-            collectionName: "changefeedlabcollection",
+            collectionName: "changefeeddemocollection",
             ConnectionStringSetting = "DBConnection",
-            LeaseCollectionName = "leases")]IReadOnlyList<Document> input,
+            LeaseCollectionName = "leases_checkout",
+            CreateLeaseCollectionIfNotExists = true)]IReadOnlyList<Document> input,
             [OrchestrationClient] IDurableOrchestrationClient starter,
             ILogger log)
         {       

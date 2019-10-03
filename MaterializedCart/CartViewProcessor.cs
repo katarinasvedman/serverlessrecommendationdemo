@@ -13,17 +13,18 @@ namespace MaterializedCart
         [FunctionName("CartViewProcessor")]
         public static async Task Run([CosmosDBTrigger(
             databaseName: "changefeedlabdatabase",
-            collectionName: "changefeedlabcollection",
+            collectionName: "changefeeddemocollection",
             ConnectionStringSetting = "DBconnection",
             LeaseCollectionName = "viewlease",
-            CreateLeaseCollectionIfNotExists = true)]IReadOnlyList<Document> input,
+            CreateLeaseCollectionIfNotExists = true//, StartFromBeginning = true //For demo of reading event store
+            )]IReadOnlyList<Document> input,
             [OrchestrationClient] IDurableOrchestrationClient entityClient,
             ILogger log)
         {
             // Iterate through modified documents from change feed.
             foreach (var doc in input)
             {
-                string action = doc.GetPropertyValue<string>("Action");
+                var action = doc.GetPropertyValue<string>("Action");
                 log.LogInformation($"Cart action to process: {action}");
                 switch (action)
                 {
@@ -44,7 +45,7 @@ namespace MaterializedCart
         private static EntityId createEntityId(Document doc)
         {
             // The "Cart/{cartid}" entity is created on-demand.
-            string cartid = doc.GetPropertyValue<string>("CartID");
+            var cartid = doc.GetPropertyValue<string>("CartID");
 
             return new EntityId("Cart", cartid);
         }
@@ -52,10 +53,11 @@ namespace MaterializedCart
         private static Item getItem(Document doc)
         {
             // Get context information.
-            string itemCategory = doc.GetPropertyValue<string>("Item");
-            double itemPrice = doc.GetPropertyValue<double>("Price");            
+            var itemCategory = doc.GetPropertyValue<string>("Item");
+            var itemPrice = doc.GetPropertyValue<double>("Price");
+            var etag = doc.ETag;
 
-            return new Item { Id = itemCategory, Price = itemPrice };                        
+            return new Item { Id = itemCategory, Price = itemPrice, ETag = etag };                        
         }
     }
 }

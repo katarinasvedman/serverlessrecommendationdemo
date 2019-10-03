@@ -13,7 +13,7 @@ namespace CosmosApp
         [FunctionName("PersonalizationFunction")]
         public static void Run([CosmosDBTrigger(
             databaseName: "changefeedlabdatabase",
-            collectionName: "changefeedlabcollection",
+            collectionName: "changefeeddemocollection",
             ConnectionStringSetting = "DBconnection",
             LeaseCollectionName = "leases")]IReadOnlyList<Document> input, ILogger log)
         {

@@ -28,9 +28,11 @@ namespace DurableOrchestrationFunction
 
             var value = await Task.WhenAll(parallelTasks);
 
-            //For demo purpose the tasks return 0 if they are successful. This means a sum > 0 will NOT be a good result
-            //If Inventory is != 0 then the item was not available and the customer should receive an email describing "out of stock " scenario
-            //If Inventory is ok and Payment had a problem then the item should be returned to inventory with a compensating transaction and the user should be notified.
+            /*
+             * For demo purpose the tasks return 0 if they are successful. This means a sum > 0 will NOT be a good result.
+             * If Inventory is != 0 then the item was not available and the customer should receive an email describing "out of stock " scenario.
+             * If Inventory is ok and Payment had a problem then the item should be returned to inventory with a compensating transaction and the user should be notified.
+             */
             return value.All(x => x == true);
             
         }
@@ -51,7 +53,7 @@ namespace DurableOrchestrationFunction
         public async static Task<bool> PayForItem([ActivityTrigger] string itemId, ILogger log)
         {
             HttpClient client = new HttpClient();
-            var response = client.PostAsync("http://localhost:7073/api/PaymentMockup?Item=" + itemId, null).Result;
+            var response = await client.PostAsync("http://localhost:7073/api/PaymentMockup?Item=" + itemId, null);
 
             return response.IsSuccessStatusCode;
         }

@@ -3,12 +3,12 @@
     "IsEncrypted": false,
   "Values": {
     // Key from Azure Storage account
-    "AzureWebJobsStorage": "xxx",
+    "AzureWebJobsStorage": "73yECUUQuX5cKFTCYBNc4bakyjc+p9SFWNSSIlN/skV7EYETf1G2ZmiERDnydk6pQTKfr/1vATzSN3Gol4GCfw==",
     // Connection string from Azure Storage account
-    "AzureWebJobsDashboard": "xxx",
+    "AzureWebJobsDashboard": "DefaultEndpointsProtocol=https;AccountName=storagekapeltol1036;AccountKey=73yECUUQuX5cKFTCYBNc4bakyjc+p9SFWNSSIlN/skV7EYETf1G2ZmiERDnydk6pQTKfr/1vATzSN3Gol4GCfw==;EndpointSuffix=core.windows.net",
     // Primary connection string from Azure Cosmos DB account
-    "DBConnection": "xxx",
+    "DBConnection": "AccountEndpoint=https://cosmosdbkapeltol1036.documents.azure.com:443/;AccountKey=SqYx3kytfxtZqgX6Q1FGzA5rcD8ntFlKwD6jSl20Si37iTgJDyG7GDcW2gzrIByeVAvYna6y3yq3RuctcGjjXQ==;",
     // Connection string-primary key from Azure Event Hub namespace
-    "EventHubNamespaceConnection": "xxx"
+    "EventHubNamespaceConnection": "Endpoint=sb://eventhubkapeltol1036.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=5AVn4cE8lFtSAdJEfspx0MS7dWA/ZP9j0N1qF9bg4rs="
   }
 }
