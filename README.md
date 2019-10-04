@@ -1,5 +1,16 @@
+# Serverless demo with Azure Cosmos DB - Based upon Change feed Lab (See below)
+
+This is a demo for session "Cosmos DB as the event store hero for Serverless event-driven applications". This demo is based on the "Change Feed Lab" (https://azure.microsoft.com/en-us/resources/samples/azure-cosmos-db-change-feed-dotnet-retail-sample/). All instructions for the lab is added below.
+
+The purpose of the demo is to show the power of Azure Functions together with the Cosmos DB change feed, especially the use of the built in Change Feed Processor in Azure Functions, Durable Functions, Entity Functions (currently in public preview) and some nice features like streaming to PowerBI and possible use of Cognitve Services.
+
+Demo architecture:
+
+![ProjectDiagram](/Lab/labpics/ProjectVisual.PNG)
+
+--------------------------------------------------------------------------------------
 # Azure Cosmos DB - Change Feed Lab
-    
+
 ####  The Azure Cosmos DB change feed is a mechanism for getting a continuous and incremental feed of records from a Cosmos DB container as those records are being created or modified.   
    
 #### In this lab, you'll focus on how a company can use the change feed feature to its advantage and understand user patterns with *real-time data analysis visualization*. You will approach the change feed from the perspective of an e-commerce company and work with a collection of events, i.e. records that represent occurrences such as a user viewing an item, adding an item to their cart, or purchasing an item. When one of these events occurs and a new record is consequently created, the change feed will log that record. The change feed will then trigger a series of steps resulting in visualization of metrics analyzing company performance and site activity.
