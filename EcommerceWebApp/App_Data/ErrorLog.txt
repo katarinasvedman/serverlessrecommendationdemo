@@ -577,3 +577,45 @@ Stack Trace:
    vid System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    vid System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
+********** 2019-10-04 09:52:19 **********
+Inner Exception Type: System.Reflection.TargetInvocationException
+Inner Exception: Ett undantagsfel har inträffat i målet för en aktivering.
+Inner Source: mscorlib
+Inner Stack Trace: 
+   vid System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   vid System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   vid System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   vid lambda_method(Closure , MethodInfo , Object , Object[] )
+   vid System.Web.UI.WebControls.ModelDataSourceView.InvokeMethod(ModelDataSourceMethod method, Boolean isAsyncMethod)
+   vid System.Web.UI.WebControls.ModelDataSourceView.InvokeMethod(ModelDataSourceMethod method)
+   vid System.Web.UI.WebControls.ModelDataSourceView.GetSelectMethodResult(DataSourceSelectArguments arguments)
+   vid System.Web.UI.WebControls.ModelDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments)
+   vid System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   vid System.Web.UI.WebControls.ModelDataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   vid System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   vid System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   vid System.Web.UI.WebControls.GridView.DataBind()
+   vid System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound()
+   vid System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls()
+   vid System.Web.UI.Control.EnsureChildControls()
+   vid System.Web.UI.Control.PreRenderRecursiveInternal()
+   vid System.Web.UI.Control.PreRenderRecursiveInternal()
+   vid System.Web.UI.Control.PreRenderRecursiveInternal()
+   vid System.Web.UI.Control.PreRenderRecursiveInternal()
+   vid System.Web.UI.Control.PreRenderRecursiveInternal()
+   vid System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Exception Type: System.Web.HttpUnhandledException
+Exception: Ett undantagsfel av typen System.Web.HttpUnhandledException inträffade.
+Source: Application_Error - Global.asax
+Stack Trace: 
+   vid System.Web.UI.Page.HandleError(Exception e)
+   vid System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   vid System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   vid System.Web.UI.Page.ProcessRequest()
+   vid System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   vid System.Web.UI.Page.ProcessRequest(HttpContext context)
+   vid ASP.shoppingcart_aspx.ProcessRequest(HttpContext context) i c:\Users\kapeltol\AppData\Local\Temp\Temporary ASP.NET Files\vs\b05a298e\f92e0d0d\App_Web_ojbsd1gq.5.cs:rad 0
+   vid System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   vid System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   vid System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+

@@ -20,8 +20,8 @@ namespace CosmosApp
             // Get the actions list to choose from personalizer with their features.
             IList<RankableAction> actions = GetActions();
 
-            string apikey = "2a16c124f3c1425db69659f32aaccc40";
-            string endpoint = "https://westeurope.api.cognitive.microsoft.com/";
+            string apikey = "API key here";
+            string endpoint = "URL to cognitive service";
             PersonalizerClient client = InitializePersonalizerClient(endpoint, apikey);
 
             // Iterate through modified documents from change feed.

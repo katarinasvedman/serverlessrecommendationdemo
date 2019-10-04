@@ -1,13 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 
-namespace MaterializedCart
+namespace CartView
 {
     public static class CartDurableEntity
     {
@@ -26,12 +22,12 @@ namespace MaterializedCart
             if (userAction == "purchased")
             {
                 log.LogInformation($"Cart is destructed: {ctx.Self}");
-                ctx.DestructOnExit();
+                //ctx.DestructOnExit();
                 return;
             }
 
             //If Cart doesn't exist it will initialize with an empty item list
-            var cart = ctx.GetState<Cart>( () =>  new Cart( ctx.Key ));
+            var cart = ctx.GetState( () => new Cart(ctx.Key));
 
             //Read item from "request" input
             var item = ctx.GetInput<Item>();
@@ -54,13 +50,15 @@ namespace MaterializedCart
                     cart.Items.Remove(item);
                     cart.TotalAmount -= item.Price;
                     break;
+                default:
+                    return;
             }
             ctx.SetState(cart);            
         }
 
         private static bool CheckForDuplicate(Cart cart, string eTag)
         {
-            return cart.Items.Find(x => x.ETag == eTag) != null;
+            return cart.Items.Any(x => x.ETag == eTag);
         }
     }
 }

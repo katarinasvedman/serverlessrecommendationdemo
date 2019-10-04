@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangeFeedFunction", "ChangeFeedLabSolution\ChangeFeedFunction.csproj", "{292A9F0F-829C-42EE-9CA7-761EAE45F95B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGenerator", "DataGenerator\DataGenerator.csproj", "{E0F57034-CDF9-4EFA-BB4C-25C21F914459}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Personalization", "CosmosApp\Personalization.csproj", "{84855BB3-FA71-4E4D-9AC3-9A9B165E1155}"
@@ -15,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mockups", "InventoryMockup\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DurableOrchestrationFunction", "DurableOrchestrationFunction\DurableOrchestrationFunction.csproj", "{FEB79576-8CCB-4448-B5CB-0AEC6E864F25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeFeedPowerBIFunction", "ChangeFeedPowerBIFunction\ChangeFeedPowerBIFunction.csproj", "{55ACC14A-5505-4C44-AEC2-AD21484F230A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangeFeedPowerBIFunction", "ChangeFeedPowerBIFunction\ChangeFeedPowerBIFunction.csproj", "{55ACC14A-5505-4C44-AEC2-AD21484F230A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{292A9F0F-829C-42EE-9CA7-761EAE45F95B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{292A9F0F-829C-42EE-9CA7-761EAE45F95B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{292A9F0F-829C-42EE-9CA7-761EAE45F95B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{292A9F0F-829C-42EE-9CA7-761EAE45F95B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0F57034-CDF9-4EFA-BB4C-25C21F914459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E0F57034-CDF9-4EFA-BB4C-25C21F914459}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0F57034-CDF9-4EFA-BB4C-25C21F914459}.Release|Any CPU.ActiveCfg = Release|Any CPU

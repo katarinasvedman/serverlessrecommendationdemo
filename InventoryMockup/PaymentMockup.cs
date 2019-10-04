@@ -22,11 +22,13 @@ namespace Mockups
             Thread.Sleep(10000);
 
             //Random payment declined result
-            Random rnd = new Random();
+            var rnd = new Random();
             int ok = rnd.Next(0, 100) % 3;
-            return ok == 1
+            var result = ok == 1
                 ? (ActionResult)new OkObjectResult($"Payment ok")
                 : new BadRequestObjectResult("Payment rejected");
+
+            return await Task.FromResult(result);
         }
     }
 }

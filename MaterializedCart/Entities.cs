@@ -3,16 +3,13 @@ using Newtonsoft.Json;
 using Microsoft.Azure.Documents;
 using System.Collections.Generic;
 
-namespace MaterializedCart
+namespace CartView
 {
     public class Cart
     {
         public string CartId;
         public double TotalAmount;
-        public string TimeStamp;
         public List<Item> Items = new List<Item>();
-
-        public Cart(){}
 
         public Cart(string id)
         {

@@ -6,7 +6,6 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using MaterializedCart;
 
 namespace CartView
 {
@@ -20,7 +19,7 @@ namespace CartView
         {
             //Get cartid from http request
             string cartid = req.Query["CartId"];
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
             cartid = cartid ?? data?.CartId;
             if(cartid == null)
@@ -33,7 +32,7 @@ namespace CartView
                 //Create cart JSON
                 Cart cart = entityresult.EntityState;
                 dynamic cartAsJson = JsonConvert.SerializeObject(cart);
-                return (ActionResult)new OkObjectResult(cartAsJson);
+                return new OkObjectResult(cartAsJson);
             }
 
             return new BadRequestObjectResult($"Someting went wrong reading cart: {cartid}");

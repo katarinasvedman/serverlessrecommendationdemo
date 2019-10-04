@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using MaterializedCart;
+using CartView;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
 namespace DurableOrchestrationFunction
@@ -24,7 +22,7 @@ namespace DurableOrchestrationFunction
             // Iterate through modified documents from change feed.
             foreach (var doc in input)
             {
-                string action = doc.GetPropertyValue<string>("Action");
+                var action = doc.GetPropertyValue<string>("Action");
                 if (action != "Purchased")
                     return;
 

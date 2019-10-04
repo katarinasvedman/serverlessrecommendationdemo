@@ -2,10 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using MaterializedCart;
+using CartView;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
-using Mockups;
 
 namespace DurableOrchestrationFunction
 {
@@ -38,10 +37,10 @@ namespace DurableOrchestrationFunction
         }
 
         [FunctionName("CallInventoryFunction")]
-        public async static Task<bool> PurchaseItem([ActivityTrigger] string itemId, ILogger log)
+        public static async Task<bool> PurchaseItem([ActivityTrigger] string itemId, ILogger log)
         {
             log.LogInformation($"check inventory for item: {itemId}.");
-            HttpClient client = new HttpClient();
+            var client = new HttpClient();
             var values = new Dictionary<string, string>{{ "Item", itemId}};
             var content = new FormUrlEncodedContent(values);
             var response = await client.PostAsync("http://localhost:7073/api/InventoryMockup?Item=" + itemId, content);

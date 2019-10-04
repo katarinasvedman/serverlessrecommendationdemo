@@ -6,7 +6,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
-namespace MaterializedCart
+namespace CartView
 {
     public static class CartViewProcessor
     {
@@ -15,8 +15,8 @@ namespace MaterializedCart
             databaseName: "changefeedlabdatabase",
             collectionName: "changefeeddemocollection",
             ConnectionStringSetting = "DBconnection",
-            LeaseCollectionName = "viewlease",
-            CreateLeaseCollectionIfNotExists = true//, StartFromBeginning = true //For demo of reading event store
+            LeaseCollectionName = "viewleaseRestore",
+            CreateLeaseCollectionIfNotExists = true, StartFromBeginning = true //For demo of reading event store
             )]IReadOnlyList<Document> input,
             [OrchestrationClient] IDurableOrchestrationClient entityClient,
             ILogger log)
@@ -45,9 +45,9 @@ namespace MaterializedCart
         private static EntityId createEntityId(Document doc)
         {
             // The "Cart/{cartid}" entity is created on-demand.
-            var cartid = doc.GetPropertyValue<string>("CartID");
+            var cartId = doc.GetPropertyValue<string>("CartID");
 
-            return new EntityId("Cart", cartid);
+            return new EntityId("Cart", cartId);
         }
 
         private static Item getItem(Document doc)
@@ -55,9 +55,9 @@ namespace MaterializedCart
             // Get context information.
             var itemCategory = doc.GetPropertyValue<string>("Item");
             var itemPrice = doc.GetPropertyValue<double>("Price");
-            var etag = doc.ETag;
+            var eTag = doc.ETag;
 
-            return new Item { Id = itemCategory, Price = itemPrice, ETag = etag };                        
+            return new Item { Id = itemCategory, Price = itemPrice, ETag = eTag };                        
         }
     }
 }
