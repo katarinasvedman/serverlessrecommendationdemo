@@ -6,7 +6,7 @@ The purpose of the demo is to show the power of Azure Functions together with th
 
 Demo architecture:
 
-![ProjectDiagram](/Lab/labpics/ProjectVisual.PNG)
+![ProjectDiagram](ServerlessPic.PNG)
 
 --------------------------------------------------------------------------------------
     
