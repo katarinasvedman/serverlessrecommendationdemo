@@ -24,7 +24,7 @@ namespace DurableOrchestrationFunction
             {
                 var action = doc.GetPropertyValue<string>("Action");
                 if (action != "Purchased")
-                    return;
+                    continue;
 
                 string cartid = doc.GetPropertyValue<string>("CartID");
                 log.LogInformation($"Cart to checkout: {cartid}");
