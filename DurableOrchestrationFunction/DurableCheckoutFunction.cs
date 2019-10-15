@@ -16,7 +16,7 @@ namespace DurableOrchestrationFunction
             ConnectionStringSetting = "DBConnection",
             LeaseCollectionName = "leases_checkout",
             CreateLeaseCollectionIfNotExists = true)]IReadOnlyList<Document> input,
-            [OrchestrationClient] IDurableOrchestrationClient starter,
+            [DurableClient] IDurableOrchestrationClient starter,
             ILogger log)
         {       
             // Iterate through modified documents from change feed.

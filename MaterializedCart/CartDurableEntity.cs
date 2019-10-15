@@ -13,47 +13,36 @@ namespace CartView
             ILogger log)
         {
             var userAction = ctx.OperationName;
-            //Do not care about Viewed event
-            if (userAction == "viewed")
-            {
-                return;
-            }
-            //Checked out - Cart is no longer needed 
-            if (userAction == "purchased")
-            {
-                log.LogInformation($"Cart is destructed: {ctx.Self}");
-                //ctx.DestructOnExit();
-                return;
-            }
 
             //If Cart doesn't exist it will initialize with an empty item list
-            var cart = ctx.GetState( () => new Cart(ctx.Key));
-
-            //Read item from "request" input
-            var item = ctx.GetInput<Item>();
-            if (item == null)
-                ctx.Return(new Exception($"No Item found in request to Cart {ctx.Self}"));
-
-            //Duplicate detection. Don't add duplicates.
-            if(CheckForDuplicate(cart, item.ETag))
-                return;
-
-            log.LogInformation($"Processing action: {userAction}, item: {item.Id} in Cart: {ctx.Self} ");
+            var cart = ctx.GetState(() => new Cart(ctx.EntityKey));
 
             switch (userAction)
-            {                
-                case "add":                    
-                    cart.Items.Add(item);
+            {
+                case "add":
+                    var item = ctx.GetInput<Item>();
+                    //Duplicate detection. Don't add duplicates.
+                    if (CheckForDuplicate(cart, item.ETag))
+                        return;
+                    cart.Items.Add(ctx.GetInput<Item>());
                     cart.TotalAmount += item.Price;
+                    log.LogInformation($"Added item in cart: {item.Id} in Cart: {ctx.ToString()}");
                     break;
                 case "remove":
+                    item = ctx.GetInput<Item>();
                     cart.Items.Remove(item);
                     cart.TotalAmount -= item.Price;
+                    log.LogInformation($"Removed item in cart: {item.Id} in Cart: {ctx.ToString()}");
                     break;
+                case "purchased":
+                    //Checked out - Cart is no longer needed 
+                    log.LogInformation($"Cart is destructed: {ctx.ToString()}");
+                    ctx.DeleteState();
+                    return;
                 default:
                     return;
             }
-            ctx.SetState(cart);            
+            ctx.SetState(cart);
         }
 
         private static bool CheckForDuplicate(Cart cart, string eTag)

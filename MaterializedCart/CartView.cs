@@ -14,7 +14,7 @@ namespace CartView
         [FunctionName("CartView")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
-            [OrchestrationClient] IDurableOrchestrationClient entityClient,
+            [DurableClient] IDurableEntityClient entityClient,
             ILogger log)
         {
             //Get cartid from http request

@@ -18,7 +18,7 @@ namespace CartView
             LeaseCollectionName = "viewleaseRestore",
             CreateLeaseCollectionIfNotExists = true, StartFromBeginning = true //For demo of reading event store
             )]IReadOnlyList<Document> input,
-            [OrchestrationClient] IDurableOrchestrationClient entityClient,
+            [DurableClient] IDurableEntityClient entityClient,
             ILogger log)
         {
             // Iterate through modified documents from change feed.
