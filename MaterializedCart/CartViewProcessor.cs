@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
 namespace CartView
@@ -13,10 +11,11 @@ namespace CartView
         [FunctionName("CartViewProcessor")]
         public static async Task Run([CosmosDBTrigger(
             databaseName: "changefeedlabdatabase",
-            collectionName: "changefeeddemocollection",
+            collectionName: "changefeedlabcollection",
             ConnectionStringSetting = "DBconnection",
-            LeaseCollectionName = "viewleaseRestore",
-            CreateLeaseCollectionIfNotExists = true, StartFromBeginning = true //For demo of reading event store
+            LeaseCollectionName = "cartlease",
+            CreateLeaseCollectionIfNotExists = true 
+            //,StartFromBeginning = true //For demo of reading event store
             )]IReadOnlyList<Document> input,
             [DurableClient] IDurableEntityClient entityClient,
             ILogger log)

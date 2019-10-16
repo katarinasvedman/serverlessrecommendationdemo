@@ -12,7 +12,7 @@ namespace DurableOrchestrationFunction
         [FunctionName("DurableCheckoutFunction")]
         public static async Task Run([CosmosDBTrigger(
             databaseName: "changefeedlabdatabase",
-            collectionName: "changefeeddemocollection",
+            collectionName: "changefeedlabcollection",
             ConnectionStringSetting = "DBConnection",
             LeaseCollectionName = "leases_checkout",
             CreateLeaseCollectionIfNotExists = true)]IReadOnlyList<Document> input,

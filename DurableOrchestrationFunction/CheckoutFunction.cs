@@ -43,7 +43,7 @@ namespace DurableOrchestrationFunction
             var client = new HttpClient();
             var values = new Dictionary<string, string>{{ "Item", itemId}};
             var content = new FormUrlEncodedContent(values);
-            var response = await client.PostAsync("http://localhost:7073/api/InventoryMockup?Item=" + itemId, content);
+            var response = await client.PostAsync("http://localhost:5870/api/InventoryMockup?Item=" + itemId, content);
 
             return response.IsSuccessStatusCode;
         }
@@ -52,7 +52,7 @@ namespace DurableOrchestrationFunction
         public async static Task<bool> PayForItem([ActivityTrigger] string itemId, ILogger log)
         {
             HttpClient client = new HttpClient();
-            var response = await client.PostAsync("http://localhost:7073/api/PaymentMockup?Item=" + itemId, null);
+            var response = await client.PostAsync("http://localhost:5870/api/PaymentMockup?Item=" + itemId, null);
 
             return response.IsSuccessStatusCode;
         }
